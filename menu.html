@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Menu</title>
+		<link href="css/estilos.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<style type="text/css">
+			
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			#header {
+				margin:auto;
+				width:900px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color: rgba(10, 104, 5, 0.623);
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background: rgb(19, 138, 3 ); /* Old browsers */
+				background: -moz-linear-gradient(top,  rgba(40, 146, 26, 0.623) 0%, rgba(10, 104, 5, 0.623) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(19, 138, 3 ,0.623)), color-stop(100%,rgba(10, 104, 5, 0.849))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  rgb(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  rgba(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  rgba(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  rgba(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* W3C */
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:100px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-100px;
+				top:0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+
+		<center>
+	    <div id="header">
+		<ul class="nav">
+                   <br>
+			<li><a href="#">Información</a> 
+				<ul>
+					<li><a href="about.html">Acerca de</a></li>
+					<li><a href="support.html">Contáctame</a></li>
+					<li><a href="index1.html">Cerrar sesión</a></li>
+		 </ul>
+</li>
+		 </ul>
+	    </div>
+			</center>
+			<br><br><br><br>
+		<center><div class='group-dbl'>
+			<a class="dash-char">Ingresa los datos que desea medir <span><em>(minimo 20)</em></span></a> 
+			<input type="text" name="calcdatos" class='group-db' border='2'>
+		</table><br>
+			<br>
+			<a href='menu.html'><input type='button' class='form-btn' value='Calcular'></a>
+			<a href='menu.html'><input type='button' class='form-btn' value='Limpiar'></a>
+		</center></div>
+		    <header class="cont">
+        <video class="video" playsinline autoplay loop muted>
+            <source src="css/textures/bg.mp4" type="video/mp4">
+        </video>
+    </header>
+	</body>
+</html>
+
+ 
+
+
+
+
