@@ -1,98 +1,94 @@
 <html>
 	<head>
 		<title>Menu</title>
+		<script src="js/main.js"></script>
 		<link href="css/estilos.css" rel="stylesheet" type="text/css">
 		<meta charset="utf-8">
-		<style type="text/css">
-			
-			* {
-				margin:0px;
-				padding:0px;
-			}
-			
-			#header {
-				margin:auto;
-				width:900px;
-				font-family:Arial, Helvetica, sans-serif;
-			}
-			
-			ul, ol {
-				list-style:none;
-			}
-			
-			.nav > li {
-				float:left;
-			}
-			
-			.nav li a {
-				background-color: rgba(10, 104, 5, 0.623);
-				color:#fff;
-				text-decoration:none;
-				padding:10px 12px;
-				display:block;
-			}
-			
-			.nav li a:hover {
-				background: rgb(19, 138, 3 ); /* Old browsers */
-				background: -moz-linear-gradient(top,  rgba(40, 146, 26, 0.623) 0%, rgba(10, 104, 5, 0.623) 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(19, 138, 3 ,0.623)), color-stop(100%,rgba(10, 104, 5, 0.849))); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top,  rgb(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top,  rgba(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* Opera 11.10+ */
-				background: -ms-linear-gradient(top,  rgba(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* IE10+ */
-				background: linear-gradient(to bottom,  rgba(40, 146, 26, 0.623) 0%,rgba(10, 104, 5, 0.623) 100%); /* W3C */
-			}
-			
-			.nav li ul {
-				display:none;
-				position:absolute;
-				min-width:100px;
-			}
-			
-			.nav li:hover > ul {
-				display:block;
-			}
-			
-			.nav li ul li {
-				position:relative;
-			}
-			
-			.nav li ul li ul {
-				right:-100px;
-				top:0px;
-			}
-			
-		</style>
+		
 	</head>
 	<body>
-
-		<center>
-	    <div id="header">
-		<ul class="nav">
-                   <br>
-			<li><a href="#">Información</a> 
-				<ul>
-					<li><a href="about.html">Acerca de</a></li>
-					<li><a href="support.html">Contáctame</a></li>
-					<li><a href="index1.html">Cerrar sesión</a></li>
-		 </ul>
-</li>
-		 </ul>
-	    </div>
-			</center>
 			<br><br><br><br>
 		<center><div class='group-dbl'>
-			<a class="dash-char">Ingresa los datos que desea medir <span><em>(minimo 20)</em></span></a> 
-			<input type="text" name="calcdatos" class='group-db' border='2'>
+			<p class="dash-char-t">Ingresa los datos que desea medir <span><em>(minimo 20)</em></span></p>
+			<input type="text" on id="calcdatos" placeholder="Inserta los datos separados por comas"  class='group-db' border='2' required>
 		</table><br>
 			<br>
-			<a href='menu.html'><input type='button' class='form-btn' value='Calcular'></a>
+			<input type='button' onclick="calcular()" class='form-btn' value='Calcular'>
 			<a href='menu.html'><input type='button' class='form-btn' value='Limpiar'></a>
+			<button class="form-btn" onclick="showabout()">Información</button>
 		</center></div>
+		<center>
+			<table>
+			<tr>
+				<td>
+				<div id="results1" class='group'>
+				<p class="dash-char-t">Media, Mediana, Moda, Rango, Máximo, Minimo</p>
+				<div class="dashdialog-s">
+				<p id="media">La media es: </p>
+				<p id="mediana">La mediana es: </p>
+				<p id="moda">La moda es: </p>
+				<p id="rango">El rango es: </p>
+				<p id="max">El valor máximo es: </p>
+				<p id="min">El valor minimo es: </p>
+			</td>
+			<td>
+				<div id="results1" class='group'>
+				<p class="dash-char-t">Dial2</p>
+				<div class="dashdialog-s">sub2 <br>
+					<br><br><br><br>
+					<br><br><br><br>
+					<br><br><br><br>
+					
+				</div>
+			</td>
+			</tr>
+		</div>
+		</table></center>
+		
+			<br>
+			<br>
+
+		</div>
+		<div id="overlay"><img src="css/textures/loading.png" id="loader"></div>
+		<div id="dialog">
+			<div id="animateddial" class="group">
+				<p class="dash-char-t" id="err1">err1</p>
+				<div class="dashdialog-s">
+					<p class="dash-char" id="errsub1">errsub</p><br>
+				</div>
+				<center><br><button class="form-btn" onclick="skipdial()">OK</button></center>
+			</div>
+		</div>
+		<div id="aboutdial">
+			<div id="animateddial" class="group">
+				<div class="dashdialog-s">
+					<center>
+						<img class="pfp" src="css/textures/x294-sp.png" alt="X294">
+						<p class="dash-char">Creado por X294</p><br>
+						<p class="dash-char">Versión 0.5</p>
+						<p class="dash-char">Cambios:</p>
+						<p class="dash-char">- Reestructuración de la página</p>
+						<p class="dash-char">- Implementación de JavaScript</p>
+						<table>
+							<tr>
+								<td>
+									<a href="https://github.com/X294-DEV"><img class="social" src="css/textures/gh.jfif" alt="github" width="60" height="60"></a>
+								</td>
+							</tr>
+						</table>
+						<br>
+						<img class="logo" src="css/textures/logo.png" alt="logo" width="60px">
+					</center>
+				</div>
+				<center><br><button class="form-btn" onclick="skipdial()">OK</button></center>
+			</div>
+		</div>
 		    <header class="cont">
         <video class="video" playsinline autoplay loop muted>
             <source src="css/textures/bg.mp4" type="video/mp4">
         </video>
     </header>
+	<audio src="css/audio/Beep.wav" id="beep" preload="auto"></audio>
 	</body>
 </html>
 

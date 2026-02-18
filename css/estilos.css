@@ -205,6 +205,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	box-shadow:         inset 0 0 2px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 255, 255, 0.1);
 	behavior: url(PIE.htc);
 }
+.form-btn:disabled {
+	padding: 0 15px;
+	height: 30px;
+	font: bold 12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-align: center;
+	color: #363636;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	border: 1px solid #106a0d7a;
+	border-radius: 4px;
+	outline: none;
+	position: relative;
+	background-color: rgba(8, 29, 7, 0.18);
+	-moz-box-shadow:    inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.7);
+	box-shadow:         inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.7);
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+	behavior: url(PIE.htc);
+}
 
 label {
 	margin-bottom: 8px;
@@ -226,7 +247,29 @@ label span {
     border: 1px solid #CCCCCC;
     padding: 20px;
 }
+.dashdialog-s {
+	border: 3px solid #999999;
+	padding: 20px;
+	font: bold 12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	width: auto;
+	color: rgb(252, 252, 252);
+border-radius: 8px;
+border-color:#64dd3f;
+	
+	background: rgb(0, 0, 0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%, rgba(0, 0, 0, 0.823) 70%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.823)), color-stop(70%,rgba(0, 0, 0, 0.849))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* W3C */
 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d1eeff',GradientType=0 ); /* IE6-9 */
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
 .group-db {
 	border: 3px solid #999999;
 	padding: 20px;
@@ -234,6 +277,11 @@ label span {
 	color: rgb(252, 252, 252);
 border-radius: 8px;
 border-color:#64dd3f;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
 	
 	background: rgb(0, 0, 0); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%, rgba(0, 0, 0, 0.823) 70%); /* FF3.6+ */
@@ -315,8 +363,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 .dash-char{
 	color: #ffffff;
-	font: bold;
-	font-size: 18;
+	font: bold 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.dash-char-t{
+	color: #ffffff;
+	font: bold 20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .group-login {
 	border: 3px solid #999999;
@@ -357,4 +408,62 @@ select:hover{
 	background-image:      -o-linear-gradient(top, #ade21d, #616a0d); /* Opera 11.10+ */
 	background-image:         linear-gradient(top, #ade21d, #616a0d);
 	-pie-background:          linear-gradient(top, #ade21d, #616a0d); /* IE6-IE9 */
+}
+#overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.822);
+      display: none; 
+      justify-content: center;
+      align-items: flex-end; 
+    }
+    #loader {
+      margin-bottom: 50px;
+      width: 50px; height: 50px;
+      animation: spin 1.5s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+#dialog{
+	position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.822);
+      display: none; 
+      justify-content: center;
+      align-items: center; 
+    }
+#aboutdial{
+	position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.822);
+      display: none; 
+      justify-content: center;
+      align-items: center; 
+}
+#animateddial.group{
+	position: relative;
+	animation-name: dashdialog-an1;
+	animation-duration: 0.2s;
+}
+@keyframes dashdialog-an1{
+	0% {top: -100%;}
+	100% {top: 0%;}
+}
+img.pfp{
+	clip-path: circle();
+	width: 103px;
+	height: 103px;
+}
+img.social{
+	clip-path: circle();
+	width: 50px;
+	height: 50px;
+}
+.logo:hover{
+	content: url(textures/logo-hover.png);
 }
