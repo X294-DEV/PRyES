@@ -2,7 +2,6 @@
 function calcular(){
     let calcmain = document.getElementById("calcdatos").value;
     let list = calcmain.split(",").map(num => parseInt(num.trim()));
-    const sound = document.getElementById("beep");
 
     if (list.length < 20 || list.some(isNaN)){
         document.getElementById("dialog").style.display = "flex";
@@ -44,8 +43,6 @@ function calcular(){
         let rango = (valMax - valMin);
 
         //RESULTADOS
-        sound.currentTime = 0;
-        sound.play();
         document.getElementById("media").innerText = "La media es: " +prom.toFixed(2);
         document.getElementById("mediana").innerText = "La mediana es: " +mediana;
         document.getElementById("moda").innerText = "La moda es: " +moda;
