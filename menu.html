@@ -7,32 +7,78 @@
 		
 	</head>
 	<body>
-			<br><br><br><br>
-		<center><div class='group-dbl'>
+		<center>
+		<table class="group">
+			<tr>
+				<td>
+					<div class='group-db-blck'>
 			<p class="dash-char-t">Ingresa los datos que desea medir <span><em>(minimo 20)</em></span></p>
-			<input type="text" on id="calcdatos" placeholder="Inserta los datos separados por comas"  class='group-db' border='2' required>
-		</table><br>
+			<input type="text" id="calcdatos" placeholder="Inserta los datos separados por comas"  class='group-db' border='2' required>
+		<br>
 			<br>
 			<input type='button' onclick="calcular()" class='form-btn' value='Calcular'>
 			<a href='menu.html'><input type='button' class='form-btn' value='Limpiar'></a>
 			<button class="form-btn" onclick="showabout()">Información</button>
-		</center></div>
+		</td>
+		<td>
+			<div class="group-blck">
+				<b class="dash-char">Amplitud de clase</b>
+				<input type="text" id="ampInt" placeholder="Inserta los datos separados por comas"  class='group-blck' required>
+				<BR></BR>
+				<button class="form-btn" onclick="randomVal()">Generar datos al azar</button>
+			</div>
+		</td>
+			</tr>
+		</table>
+		
+		</div>
+		
+		</center>
 		<center>
-			<table>
+			<table class="group-blck">
 			<tr>
 				<td>
-				<div id="results1" class='group'>
+				<div id="results1" class='group-blck'>
+				<p class="dash-char-t">Universo, población y muestra</p>
+				<div class="dashdialog-s">
+				<p class="dash-char"><b>Universo: </b>Todos los posibles valores de la variable que estudias.</p>
+				<p class="dash-char"><b>Población: </b>El conjunto total de elementos de interés.</p>
+				<p id="muesdial" class="dash-char"><b>Muestra: </b>Los datos capturados por el usuario.</p>
+				<p id="maxmindial">Tus datos varian del - al -.</p>
+				
+			</td>
+				<td>
+				<div id="results1" class='group-blck'>
 				<p class="dash-char-t">Media, Mediana, Moda, Rango, Máximo, Minimo</p>
 				<div class="dashdialog-s">
-				<p id="media">La media es: </p>
-				<p id="mediana">La mediana es: </p>
-				<p id="moda">La moda es: </p>
-				<p id="rango">El rango es: </p>
-				<p id="max">El valor máximo es: </p>
-				<p id="min">El valor minimo es: </p>
+					<table>
+						<tr>
+							<td><p class="dash-char">Media: </p></td>
+							<td><table class="group-table"><tr><td><p id="media">-</p></td></tr></table></td>
+					</tr>
+						<tr>
+							<td><p class="dash-char">Mediana: </p></td>
+							<td><table class="group-table"><tr><td><p id="mediana">-</p></td></tr></table></td>
+					</tr>
+				<tr>
+							<td><p class="dash-char">Moda: </p></td>
+							<td><table class="group-table"><tr><td><p id="moda">-</p></td></tr></table></td>
+					</tr>
+				<tr>
+							<td><p class="dash-char">Rango: </p></td>
+							<td><table class="group-table"><tr><td><p id="rango">-</p></td></tr></table></td>
+					</tr>
+				<tr>
+							<td><p class="dash-char">Valor máximo: </p></td>
+							<td><table class="group-table"><tr><td><p id="max">-</p></td></tr></table></td>
+					</tr>
+				<tr>
+							<td><p class="dash-char">Valor minimo: </p></td>
+							<td><table class="group-table"><tr><td><p id="min">-</p></td></tr></table></td>
+					</tr></table>
 			</td>
 			<td>
-				<div id="results1" class='group'>
+				<div id="results1" class='group-blck'>
 				<p class="dash-char-t">Dial2</p>
 				<div class="dashdialog-s">sub2 <br>
 					<br><br><br><br>

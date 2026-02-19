@@ -43,12 +43,14 @@ function calcular(){
         let rango = (valMax - valMin);
 
         //RESULTADOS
-        document.getElementById("media").innerText = "La media es: " +prom.toFixed(2);
-        document.getElementById("mediana").innerText = "La mediana es: " +mediana;
-        document.getElementById("moda").innerText = "La moda es: " +moda;
-        document.getElementById("rango").innerText = "El rango es: " +rango;
-        document.getElementById("max").innerText = "El valor máximo es: " +valMax;
-        document.getElementById("min").innerText = "El valor minimo es: " +valMin;
+        document.getElementById("media").innerText = prom.toFixed(2);
+        document.getElementById("mediana").innerText = mediana;
+        document.getElementById("moda").innerText = moda;
+        document.getElementById("rango").innerText = rango;
+        document.getElementById("max").innerText = valMax;
+        document.getElementById("min").innerText = valMin;
+        document.getElementById("muesdial").innerHTML = `<b>Muestra: </b> Los ${list.length}  datos capturados por el usuario`;
+        document.getElementById("maxmindial").innerHTML = `Tus datos varian del ${valMin}  al ${valMax}.`;
     }, 4000);
 }
 function skipdial(){
@@ -57,4 +59,7 @@ function skipdial(){
 }
 function showabout(){
     document.getElementById("aboutdial").style.display = "flex";
+}
+function randomInt(min,max){
+
 }
