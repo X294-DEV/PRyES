@@ -63,3 +63,8 @@ function showabout(){
 function randomInt(min,max){
 
 }
+function errNA(){
+    document.getElementById("dialog").style.display = "flex";
+    document.getElementById("err1").innerText = "Ocurrio un problema...";
+    document.getElementById("errsub1").innerText = "Esta función no se encuentra disponible por el momento ;)";
+}
