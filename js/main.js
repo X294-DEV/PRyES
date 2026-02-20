@@ -32,15 +32,26 @@ function calcular(){
         orden.forEach(num =>{
             freq[num] = (freq[num] || 0) + 1;
         });
+
         let maxFreq = Math.max(...Object.values(freq));
-        let moda = Object.keys(freq)
+        let moda;
+        if (maxFreq == 1){
+            moda = "No existe moda";
+        }
+        else{
+            moda = Object.keys(freq)
                 .filter(num => freq[num] == maxFreq)
                 .join(", ");
+        }
         
         //MAX, MIN, RANGO
         let valMax = Math.max(...list);
         let valMin = Math.min(...list);
         let rango = (valMax - valMin);
+
+        //AMPLITUD
+        let sqrTDat = Math.sqrt(list.length);
+        let ampClase = (rango/sqrTDat.toFixed(2));
 
         //RESULTADOS
         document.getElementById("media").innerText = prom.toFixed(2);
@@ -51,6 +62,8 @@ function calcular(){
         document.getElementById("min").innerText = valMin;
         document.getElementById("muesdial").innerHTML = `<b>Muestra: </b> Los ${list.length}  datos capturados por el usuario`;
         document.getElementById("maxmindial").innerHTML = `Tus datos varian del ${valMin}  al ${valMax}.`;
+        document.getElementById("ampClass").value = ampClase.toFixed(2);
+        document.getElementById("muestreo").innerText = `Aquí normalmente es muestreo (muestra de ${list.length}).`;
     }, 4000);
 }
 function skipdial(){
@@ -60,8 +73,14 @@ function skipdial(){
 function showabout(){
     document.getElementById("aboutdial").style.display = "flex";
 }
-function randomInt(min,max){
-
+function randomVal(){
+    let cantDat = Math.floor(Math.random() * 21) + 20;
+    let lista = []
+    for (let i = 0; i < cantDat; i++){
+        let nmr = Math.floor(Math.random() * 1000) +1;
+        lista.push(nmr);
+    }
+    document.getElementById("calcdatos").value = lista.join(", ");
 }
 function errNA(){
     document.getElementById("dialog").style.display = "flex";

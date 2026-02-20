@@ -18,7 +18,7 @@ align-items: center;
 justify-content: center;
 }
 video {
-position: absolute;
+position: fixed;
 top: 0;
 left: 0;
 width: 100%;
@@ -515,6 +515,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	border: 3px solid #999999;
 	padding: 20px;
 	width: 400px;
+	color: rgb(252, 252, 252);
+border-radius: 8px;
+border-color:#64dd3f;
+	
+	background: rgb(0, 0, 0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%, rgba(0, 0, 0, 0.823) 70%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.823)), color-stop(70%,rgba(0, 0, 0, 0.849))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0, 0, 0, 0.823) 0%,rgba(0, 0, 0, 0.823) 70%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d1eeff',GradientType=0 ); /* IE6-9 */
+	margin-top: 25px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+.group-blckauto {
+	border: 3px solid #999999;
+	padding: 20px;
+	width: fit-content;
 	color: rgb(252, 252, 252);
 border-radius: 8px;
 border-color:#64dd3f;

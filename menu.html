@@ -13,7 +13,7 @@
 				<td>
 					<div class='group-db-blck'>
 			<p class="dash-char-t">Ingresa los datos que desea medir <span><em>(minimo 20)</em></span></p>
-			<input type="text" id="calcdatos" placeholder="Inserta los datos separados por comas"  class='group-db' border='2' required>
+			<input type="text" id="calcdatos" placeholder="Inserta los datos separados por comas. (Ejemplo: 5, 7, 43, 56 ...)"  class='group-db' border='2' required>
 		<br>
 			<br>
 			<input type='button' onclick="calcular()" class='form-btn' value='Calcular'>
@@ -23,19 +23,17 @@
 		<td>
 			<div class="group-blck">
 				<b class="dash-char">Amplitud de clase</b>
-				<input type="text" id="ampInt" placeholder="Inserta los datos separados por comas"  class='group-blck' required>
+				<input type="text" id="ampClass" placeholder="Amplitud generada por la página o por el usuario"  class='group-blck' required>
 				<BR></BR>
-				<button class="form-btn" onclick="errNA()">Generar datos al azar</button>
+				<button class="form-btn" onclick="randomVal()">Generar datos al azar</button>
 			</div>
 		</td>
 			</tr>
 		</table>
-		
-		</div>
-		
 		</center>
 		<center>
-			<table class="group-blck">
+			<div class="group-blckauto">
+				<table>
 			<tr>
 				<td>
 				<div id="results1" class='group-blck'>
@@ -45,7 +43,7 @@
 				<p class="dash-char"><b>Población: </b>El conjunto total de elementos de interés.</p>
 				<p id="muesdial" class="dash-char"><b>Muestra: </b>Los datos capturados por el usuario.</p>
 				<p id="maxmindial">Tus datos varian del - al -.</p>
-				
+				<br><br><br><br><br>
 			</td>
 				<td>
 				<div id="results1" class='group-blck'>
@@ -79,22 +77,48 @@
 			</td>
 			<td>
 				<div id="results1" class='group-blck'>
-				<p class="dash-char-t">Dial2</p>
-				<div class="dashdialog-s">sub2 <br>
-					<br><br><br><br>
-					<br><br><br><br>
-					<br><br><br><br>
+				<p class="dash-char-t">Censo y muestreo</p>
+				<div class="dashdialog-s">
+					<p class="dash-char"><b>Censo: </b>Cuando se mide TODA la población.</p>
+					<p class="dash-char"><b>Muestreo: </b>Cuando se toma una parte.</p><br>
+					<p id="muestreo">Aquí normalmente es muestreo (muestra de - ).</p><br>
+					<br><br><br><br><br><br><br><br><br>
+					
 					
 				</div>
 			</td>
 			</tr>
-		</div>
-		</table></center>
+		</table>
+			<table>
+				<tr>
+				<td>
+					<div class="dashdialog-s">
+						<p class="dash-char-t">Tabla de frecuencias</p>
+						<table border="3" class="group-table">
+						<tr>
+							<td >Clase</td>
+							<td>Punto medio</td>
+							<td>Fr.Absoluta</td>
+							<td>Fr.Relativa</td>
+							<td>Fr.Abs.Acumulada</td>
+							<td>Fr.Rel.Acumulada</td>
+						</tr>
+					</div>
+					</table>
+				</td>
+				<td>
+					<div class="group-blck">
+						<p class="dash-char-t">Diagrama de tallo y hoja</p>
+						<div class="dashdialog-s"></div>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</center>
 		
 			<br>
 			<br>
 
-		</div>
 		<div id="overlay"><img src="css/textures/loading.png" id="loader"></div>
 		<div id="dialog">
 			<div id="animateddial" class="group">
@@ -111,10 +135,11 @@
 					<center>
 						<img class="pfp" src="css/textures/x294-sp.png" alt="X294">
 						<p class="dash-char">Creado por X294</p><br>
-						<p class="dash-char">Versión 0.5</p>
+						<p class="dash-char">Versión 0.8</p>
 						<p class="dash-char">Cambios:</p>
 						<p class="dash-char">- Reestructuración de la página</p>
 						<p class="dash-char">- Implementación de JavaScript</p>
+						<p class="dash-char">- Mas mediciones O_o</p>
 						<table>
 							<tr>
 								<td>
