@@ -1,3 +1,4 @@
+<!-- X294 -2026- -->
 <html>
 	<head>
 		<title>Pagina principal</title>
@@ -17,13 +18,13 @@
 		<br>
 			<br>
 			<input type='button' onclick="calcular()" class='form-btn' value='Calcular'>
-			<a href='menu.html'><input type='button' class='form-btn' value='Limpiar'></a>
+			<a href='index.html'><input type='button' class='form-btn' value='Limpiar'></a>
 			<button class="form-btn" onclick="showabout()">Información</button>
 		</td>
 		<td>
 			<div class="group-blck">
 				<b class="dash-char">Amplitud de clase</b>
-				<input type="text" id="ampClass" placeholder="Deje este campo vacio para que se calcule la amplitud"  class='group-blck' oninput="calcAmp()" required>
+				<input type="text" id="ampClass" class='group-blck' oninput="calcAmp()" readonly>
 				<BR></BR>
 				<button class="form-btn" onclick="randomVal()">Generar datos al azar</button>
 			</div>
@@ -111,31 +112,43 @@
 						<div class="dashdialog-s" id="resTH">
 						</div>
 					</div>
-				</td>
-				<td>
-				<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-				<div class="group-blckauto">
-    			<p class="dash-char-t">Gráficas Estadísticas</p>
-    			<canvas id="histograma"></canvas>
-    			<br><br>
-    			<canvas id="poligono"></canvas>
-    			<br><br>
-    			<canvas id="ojiva"></canvas>
-    			<br><br>
-    			<canvas id="pareto"></canvas>
-				</div>	
-			</tr>
+				</td></tr>
 			</table>
+				<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+				<div class="group-db-blck">
+    			<p class="dash-char-t">Gráficas Estadísticas</p>
+				<table class="group-table" border="1">
+					<tr>
+						<td>
+							<canvas id="histograma"></canvas>
+						</td>
+						<td>
+							<canvas id="poligono"></canvas>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<canvas id="ojiva"></canvas>
+						</td>
+						<td>
+							<canvas id="pareto"></canvas>
+						</td>
+					</tr>
+				</table>	
+				</div>
 			<table>
 				<tr>
 					<td>
 						<div class="group-blckauto">
 						<p class="dash-char-t">Probabilidad</p>
-						<input class="group-blckauto" type="number" id="fav">
-						<input class="group-blckauto" type="number" id="total">
+						<input class="group-blckauto" type="number" id="total" placeholder="Número de casos">
+						<input class="group-blckauto" type="number" id="fav" placeholder="Casos favorables">
 						<br><br>
 						<button class="form-btn" onclick="calcProb()">Calcular</button>
-						<p id="resProb"></p>
+						<button class="form-btn" onclick="rndProb()">Generar datos al azar</button>
+						<div class="group-blckauto">
+							<p id="resProb" class="dash-char">Probabilidad = -</p>
+						</div>
 					</div>
 					</td>
 					<td>
@@ -146,8 +159,69 @@
 						<input class="group-blckauto" type="text" id="conjB" placeholder="Conjunto B (3,4,5)">
 						<br><br>
 						<button class="form-btn" onclick="operarConjuntos()">Calcular</button>
-
-						<p id="resConj"></p>
+						<button class="form-btn" onclick="rndCon()">Generar datos al azar</button>
+						<div class="group-blckauto">
+							<p id="resConj" class="dash-char">Esperando datos...</p>
+						</div>
+					</div>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+						<div class="group-blckauto">
+							<p class="dash-char-t">Regla multiplicativa y diagrama de árbol</p>
+							<table>
+								<tr>
+									<td>
+										<label class="dash-char">Paso 1 (nombre):</label>
+  										<input class="group-blckauto" type="text" id="paso1" placeholder="Ejemplo: Camiseta"><br><br>
+									</td>
+									<td>
+										<label class="dash-char">Paso 2 (nombre):</label>
+  										<input class="group-blckauto" type="text" id="paso2" placeholder="Ejemplo: Pantalón"><br><br>
+									</td>
+									<td>
+										<label class="dash-char">Paso 3 (opcional):</label>
+  										<input class="group-blckauto" type="text" id="paso3" placeholder="Ejemplo: Zapato"><br><br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="dash-char">Opciones paso 1 (separadas por coma):</label>
+  										<input class="group-blckauto" type="text" id="opciones1" placeholder="Roja, Azul, Verde"><br><br>
+									</td>
+									<td>
+										<label class="dash-char">Opciones paso 2 (separadas por coma):</label>
+  										<input class="group-blckauto" type="text" id="opciones2" placeholder="Jeans, Short"><br><br>
+									</td>
+									<td>
+										<label class="dash-char">Opciones paso 3 (separadas por coma):</label>
+ 										<input class="group-blckauto" type="text" id="opciones3" placeholder="Tenis, Botas"><br><br>
+									</td>
+								</tr>
+							</table>
+  							<button class="form-btn" onclick="calcArb()">Calcular y generar árbol</button>
+							<button class="form-btn" onclick="rndArb()">Generar datos al azar</button>
+							<br>
+							<br>
+							<br>
+  							<pre class="group-db-blck" id="resdiagar">Esperando datos...</pre>
+						</div>
+					</td>
+					<td>
+						<div class="group-blckauto">
+						<p class="dash-char-t">Factorial, permutaciones y combinaciones</p>
+						
+						<input class="group-blckauto" type="text" id="n" placeholder="n">
+						<input class="group-blckauto" type="text" id="r" placeholder="r">
+						<br><br>
+						<button class="form-btn" onclick="calcFact()">Calcular</button>
+						<button class="form-btn" onclick="rndFact()">Generar datos al azar</button>
+						<div class="group-blckauto">
+							<p id="resfc" class="dash-char">Esperando datos...</p>
+						</div>
 					</div>
 					</td>
 				</tr>
