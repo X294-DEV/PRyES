@@ -298,14 +298,16 @@ function calcFact(){
       let r = parseInt(document.getElementById("r").value);
 
       if(isNaN(n) || isNaN(r)){
-        document.getElementById("resfc").innerHTML = 
-          "<b>Error:</b> Debe ingresar valores numéricos en ambos campos.";
+        document.getElementById("dialog").style.display = "flex";
+        document.getElementById("err1").innerText = "Ocurrió un problema...";
+        document.getElementById("errsub1").innerText = "Debes ingresar valores numéricos en ambos campos para continuar!";
         return;
       }
 
       if(r > n){
-        document.getElementById("resfc").innerHTML = 
-          "<b>Error:</b> r no puede ser mayor que n.";
+        document.getElementById("dialog").style.display = "flex";
+        document.getElementById("err1").innerText = "Ocurrió un problema...";
+        document.getElementById("errsub1").innerText =  "r no puede ser mayor que n.";
         return;
       }
       document.getElementById("overlay").style.display = "flex";
