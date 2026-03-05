@@ -172,17 +172,66 @@ function calcular(){
 });
 
     //PARETO
-    let sorted = [...frecuencias].sort((a,b)=>b-a);
+
+    let paretoData = labels.map((label, i) => ({
+        label: label,
+        frecuencia: frecuencias[i]
+    }));
+
+    paretoData.sort((a, b) => b.frecuencia - a.frecuencia);
+
+    let paretoLabels = paretoData.map(d => d.label);
+    let paretoFrecuencias = paretoData.map(d => d.frecuencia);
+
+    let totalFrecuencia = paretoFrecuencias.reduce((a,b)=>a+b,0);
+    let acumulado = 0;
+    let paretoAcumulado = paretoFrecuencias.map(f => {
+        acumulado += f;
+        return ((acumulado / totalFrecuencia) * 100).toFixed(2);
+    });
+
+    if(chartPareto) chartPareto.destroy();
+
     chartPareto = new Chart(document.getElementById("pareto"), {
         type: 'bar',
         data: {
-            labels: labels,
-            datasets: [{
-                label: 'Pareto',
-                data: sorted
-            }]
+            labels: paretoLabels,
+            datasets: [
+                {
+                    type: 'bar',
+                    label: 'Frecuencia',
+                    data: paretoFrecuencias,
+                    yAxisID: 'y'
+                },
+                {
+                    type: 'line',
+                    label: '% Acumulado',
+                    data: paretoAcumulado,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    position: 'left',
+                    beginAtZero: true
+                },
+                y1: {
+                    position: 'right',
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        callback: function(value) {
+                            return value + "%";
+                        }
+                    }
+                }
+            }
         }
-});
+    });
 
         //RESULTADOS
         document.getElementById("media").innerText = prom.toFixed(2);
